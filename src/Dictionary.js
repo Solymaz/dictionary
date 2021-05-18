@@ -7,6 +7,7 @@ export default function Dictionary() {
   function search(event) {
     event.preventDefault();
     alert(keyword);
+    event.target.reset();
   }
 
   return (
@@ -14,6 +15,7 @@ export default function Dictionary() {
       <form onSubmit={search}>
         <input
           type="search"
+          placeholder="Type a word"
           autoFocus={true}
           onChange={(event) => {
             setKeyword(event.target.value);
