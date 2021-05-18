@@ -9,13 +9,18 @@ function App() {
         <Dictionary />
         <footer className="App-footer">
           <small>
-            <a href="https://github.com/Solymaz/dictionary" target="_blank">
+            <a
+              href="https://github.com/Solymaz/dictionary"
+              target="_blank"
+              rel="noreferrer"
+            >
               Open-source code
             </a>{" "}
             by{" "}
             <a
               href="https://www.linkedin.com/in/solmaz-seyedmousavi/"
               target="_blank"
+              rel="noreferrer"
             >
               Solmaz
             </a>
