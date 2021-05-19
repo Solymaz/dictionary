@@ -6,17 +6,26 @@ import "./Dictionary.css";
 export default function Dictionary() {
   const [keyword, setKeyword] = useState("");
   const [results, setResults] = useState();
+  const [showError, setShowError] = useState(false);
 
-  function handleResponse(response) {
+  function handleResponse(response, event) {
     setResults(response.data[0]);
-    console.log(results);
+    setShowError(false);
+    event.target.reset();
+  }
+
+  function handleError() {
+    setShowError(true);
+    setResults();
   }
 
   function search(event) {
     event.preventDefault();
     const apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
-    axios.get(apiUrl).then(handleResponse);
-    event.target.reset();
+    axios
+      .get(apiUrl)
+      .then((response) => handleResponse(response, event))
+      .catch(handleError);
   }
 
   return (
@@ -31,7 +40,12 @@ export default function Dictionary() {
           }}
         />
       </form>
-      <Results results={results} />
+      {showError && (
+        <div className="Results-error">
+          The word could not be found, try again! 🧐
+        </div>
+      )}
+      {results && <Results results={results} />}
     </div>
   );
 }

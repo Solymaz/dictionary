@@ -5,9 +5,11 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <header className="App-header"></header>
+        <header className="App-header">
+          Not knowing is not bad, but not asking IS Bad!
+        </header>
         <Dictionary />
-        <footer className="App-footer">
+        <footer className="fixed-bottom text-center">
           <small>
             <a
               href="https://github.com/Solymaz/dictionary"

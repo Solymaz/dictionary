@@ -1,3 +1,11 @@
-.App-footer {
+body {
   text-align: center;
+  font-family: "Handlee", cursive;
+  background-color: #fbf6f0;
+}
+
+.App-header {
+  font-size: 30px;
+  padding-top: 30px;
+  font-weight: bold;
 }
